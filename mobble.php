@@ -8,7 +8,7 @@
 	Plugin URI: http://scott.ee/journal/mobble/
 	Description: Conditional functions for detecting a variety of mobile devices and tablets. For example is_android(), is_ios(), is_iphone().
 	Author: Scott Evans
-	Version: 1.2
+	Version: 1.2.1
 	Author URI: http://scott.ee
 	License: GPLv2 or later
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html
