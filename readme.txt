@@ -91,6 +91,10 @@ Please note that in certain setups caching will cause undesired behaviour. If yo
 
 == Changelog ==
 
+= 1.2.1 = 
+* Small bug fix on is_mobile() 
+* Moved screenshots out of trunk
+
 = 1.2 = 
 * Now uses mobile-detect (http://mobiledetect.net/) which provides more accurate and varied detection
 * Mobiles can now be graded (A,B,C) using the mobile-detect API (see mobile-detect.php) or mobiledetect.net 

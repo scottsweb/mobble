@@ -270,6 +270,7 @@ function is_handheld() {
 
 function is_mobile() {
 	global $mobble_detect;
+	if (is_tablet()) return false;
 	return ($mobble_detect->isMobile());
 }
 
