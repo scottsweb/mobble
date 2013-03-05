@@ -97,7 +97,7 @@ function is_blackberry() {
 
 /***************************************************************
 * Function is_opera_mobile
-* Detect both Opera Mini and hopfully Opera Mobile as well
+* Detect both Opera Mini and hopefully Opera Mobile as well
 ***************************************************************/
 
 function is_opera_mobile() {
@@ -295,8 +295,8 @@ function is_tablet() {
 }
 
 /***************************************************************
-* Function mobble_defualts
-* Setup defualt settings on theme activation
+* Function mobble_defaults
+* Setup default settings on theme activation
 ***************************************************************/
 
 register_activation_hook(__FILE__, 'mobble_defaults');
@@ -373,7 +373,7 @@ function mobble_settings() {
 	    <table class="form-table">
 	        <tr valign="top">
 	        <th scope="row">Mobify body class?</th>
-	        <td><label for="users_can_register"><input name="mobble_body_class" type="checkbox" id="mobble_body_class" value="1" <?php echo checked( 1, get_option('mobble_body_class'), false ); ?> /> &nbsp;Add mobile information to your theme body class? e.g. &lt;body class="handheld andorid tablet"&gt;</label> </td>
+	        <td><label for="users_can_register"><input name="mobble_body_class" type="checkbox" id="mobble_body_class" value="1" <?php echo checked( 1, get_option('mobble_body_class'), false ); ?> /> &nbsp;Add mobile information to your theme body class? e.g. &lt;body class="handheld android tablet"&gt;</label> </td>
 	        </tr>
 	    </table>
 	    
@@ -397,7 +397,7 @@ function mobble_register_settings() {
 
 /***************************************************************
 * Function mobble_body_class
-* Add mobilie info to the body class if activated in settings
+* Add mobble info to the body class if activated in settings
 ***************************************************************/
 
 if (!is_admin() && get_option('mobble_body_class')) {	
