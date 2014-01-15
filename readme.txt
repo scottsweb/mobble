@@ -3,7 +3,7 @@ Contributors: scottsweb
 Donate link: https://flattr.com/profile/scottsweb/things
 Tags: mobile, conditional, css, media, queries, functions
 Requires at least: 3.0
-Tested up to: 3.6.1
+Tested up to: 3.8
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -90,6 +90,10 @@ Please note that in certain setups caching will cause undesired behaviour. If yo
 2. mobble settings screen for enabling/disabling the body class.
 
 == Changelog ==
+
+= 1.3 = 
+* Update mobile detect library to 2.7.6
+* Small CSS change for 3.8
 
 = 1.2.1 = 
 * Small bug fix on is_mobile() 
