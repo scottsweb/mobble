@@ -352,7 +352,7 @@ function mobble_settings() {
 
 <style type="text/css">
 	.FlattrButton { position: relative; top: 3px !important; }
-	.scottsweb-credit { padding: 10px 10px 10px 10px; background: #f1f1f1; border-bottom: 1px solid #e3e3e3; overflow: hidden; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; border-radius: 5px; }
+	.scottsweb-credit { padding: 10px 10px 10px 10px; background: #fff; border-bottom: 1px solid #e3e3e3; overflow: hidden; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; border-radius: 5px; }
 	.scottsweb-credit img { float: left;  padding: 10px 11px 10px 5px; margin: 5px 5px 0 0; border-right: 1px solid #aaaaaa; }
 	.scottsweb-credit p { float: left; padding: 5px 0; margin: 0 0 0 8px;}
 </style>
