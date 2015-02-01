@@ -37,7 +37,7 @@ define( 'MOBBLE_PATH', dirname( __FILE__ ) );
 define( 'MOBBLE_URL', untrailingslashit( plugins_url( '/', __FILE__ ) ) );
 
 if ( !class_exists( 'Mobile_Detect' ) ) {
-	include MOBBLE_PATH . '/mobile-detect.php';
+	include MOBBLE_PATH . '/Mobile_Detect.php';
 }
 
 $useragent = isset( $_SERVER['HTTP_USER_AGENT'] ) ? $_SERVER['HTTP_USER_AGENT'] : "";
