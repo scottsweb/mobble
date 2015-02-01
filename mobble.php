@@ -1,9 +1,8 @@
 <?php
-
 /*
 	mobble
 	------
-	
+
 	Plugin Name: mobble
 	Plugin URI: http://scott.ee/journal/mobble/
 	Description: Conditional functions for detecting a variety of mobile devices and tablets. For example is_android(), is_ios(), is_iphone().
@@ -34,16 +33,16 @@
 
 */
 
-define('MOBBLE_PATH', dirname(__FILE__));
-define('MOBBLE_URL', untrailingslashit(plugins_url('/',__FILE__)));
+define( 'MOBBLE_PATH', dirname( __FILE__ ) );
+define( 'MOBBLE_URL', untrailingslashit( plugins_url( '/', __FILE__ ) ) );
 
-if (!class_exists('Mobile_Detect')) {
-	include(MOBBLE_PATH . '/mobile-detect.php');	
+if ( !class_exists( 'Mobile_Detect' ) ) {
+	include MOBBLE_PATH . '/mobile-detect.php';
 }
 
-$useragent = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : "";
+$useragent = isset( $_SERVER['HTTP_USER_AGENT'] ) ? $_SERVER['HTTP_USER_AGENT'] : "";
 $mobble_detect = new Mobile_Detect();
-$mobble_detect->setDetectionType('extended');
+$mobble_detect->setDetectionType( 'extended' );
 
 /***************************************************************
 * Function is_iphone
@@ -52,7 +51,7 @@ $mobble_detect->setDetectionType('extended');
 
 function is_iphone() {
 	global $mobble_detect;
-	return($mobble_detect->isIphone());
+	return $mobble_detect->isIphone();
 }
 
 /***************************************************************
@@ -62,7 +61,7 @@ function is_iphone() {
 
 function is_ipad() {
 	global $mobble_detect;
-	return($mobble_detect->isIpad());
+	return $mobble_detect->isIpad();
 }
 
 /***************************************************************
@@ -72,7 +71,7 @@ function is_ipad() {
 
 function is_ipod() {
 	global $mobble_detect;
-	return($mobble_detect->is('iPod'));
+	return $mobble_detect->is( 'iPod' );
 }
 
 /***************************************************************
@@ -82,17 +81,17 @@ function is_ipod() {
 
 function is_android() {
 	global $mobble_detect;
-	return($mobble_detect->isAndroidOS());
+	return $mobble_detect->isAndroidOS();
 }
 
 /***************************************************************
 * Function is_blackberry
-* Detect a blackberry device 
+* Detect a blackberry device
 ***************************************************************/
 
 function is_blackberry() {
 	global $mobble_detect;
-	return($mobble_detect->isBlackBerry());
+	return $mobble_detect->isBlackBerry();
 }
 
 /***************************************************************
@@ -102,7 +101,7 @@ function is_blackberry() {
 
 function is_opera_mobile() {
 	global $mobble_detect;
-	return($mobble_detect->isOpera());
+	return $mobble_detect->isOpera();
 }
 
 /***************************************************************
@@ -111,9 +110,9 @@ function is_opera_mobile() {
 ***************************************************************/
 
 function is_palm() {
-	_deprecated_function('is_palm', '1.2', 'is_webos');
+	_deprecated_function( 'is_palm', '1.2', 'is_webos' );
 	global $mobble_detect;
-	return($mobble_detect->is('webOS'));
+	return $mobble_detect->is( 'webOS' );
 }
 
 /***************************************************************
@@ -123,7 +122,7 @@ function is_palm() {
 
 function is_webos() {
 	global $mobble_detect;
-	return($mobble_detect->is('webOS'));
+	return $mobble_detect->is( 'webOS' );
 }
 
 /***************************************************************
@@ -133,7 +132,7 @@ function is_webos() {
 
 function is_symbian() {
 	global $mobble_detect;
-	return($mobble_detect->is('Symbian'));
+	return $mobble_detect->is( 'Symbian' );
 }
 
 /***************************************************************
@@ -143,7 +142,7 @@ function is_symbian() {
 
 function is_windows_mobile() {
 	global $mobble_detect;
-	return($mobble_detect->is('WindowsMobileOS') || $mobble_detect->is('WindowsPhoneOS'));
+	return $mobble_detect->is( 'WindowsMobileOS' ) || $mobble_detect->is( 'WindowsPhoneOS' );
 }
 
 /***************************************************************
@@ -152,9 +151,9 @@ function is_windows_mobile() {
 ***************************************************************/
 
 function is_lg() {
-	_deprecated_function('is_lg', '1.2');
+	_deprecated_function( 'is_lg', '1.2' );
 	global $useragent;
-	return(preg_match('/LG/i', $useragent));
+	return preg_match( '/LG/i', $useragent );
 }
 
 /***************************************************************
@@ -164,7 +163,7 @@ function is_lg() {
 
 function is_motorola() {
 	global $mobble_detect;
-	return($mobble_detect->is('Motorola'));
+	return $mobble_detect->is( 'Motorola' );
 }
 
 /***************************************************************
@@ -173,9 +172,9 @@ function is_motorola() {
 ***************************************************************/
 
 function is_nokia() {
-	_deprecated_function('is_nokia', '1.2');
+	_deprecated_function( 'is_nokia', '1.2' );
 	global $useragent;
-	return(preg_match('/Series60/i', $useragent) || preg_match('/Symbian/i', $useragent) || preg_match('/Nokia/i', $useragent));
+	return preg_match( '/Series60/i', $useragent ) || preg_match( '/Symbian/i', $useragent ) || preg_match( '/Nokia/i', $useragent );
 }
 
 /***************************************************************
@@ -185,7 +184,7 @@ function is_nokia() {
 
 function is_samsung() {
 	global $mobble_detect;
-	return($mobble_detect->is('Samsung'));
+	return $mobble_detect->is( 'Samsung' );
 }
 
 /***************************************************************
@@ -194,7 +193,7 @@ function is_samsung() {
 ***************************************************************/
 
 function is_samsung_galaxy_tab() {
-	_deprecated_function('is_samsung_galaxy_tab', '1.2', 'is_samsung_tablet');
+	_deprecated_function( 'is_samsung_galaxy_tab', '1.2', 'is_samsung_tablet' );
 	return is_samsung_tablet();
 }
 
@@ -205,7 +204,7 @@ function is_samsung_galaxy_tab() {
 
 function is_samsung_tablet() {
 	global $mobble_detect;
-	return($mobble_detect->is('SamsungTablet'));
+	return $mobble_detect->is( 'SamsungTablet' );
 }
 
 /***************************************************************
@@ -215,7 +214,7 @@ function is_samsung_tablet() {
 
 function is_kindle() {
 	global $mobble_detect;
-	return($mobble_detect->is('Kindle'));
+	return $mobble_detect->is( 'Kindle' );
 }
 
 /***************************************************************
@@ -225,7 +224,7 @@ function is_kindle() {
 
 function is_sony_ericsson() {
 	global $mobble_detect;
-	return($mobble_detect->is('Sony'));
+	return $mobble_detect->is( 'Sony' );
 }
 
 /***************************************************************
@@ -235,7 +234,7 @@ function is_sony_ericsson() {
 
 function is_nintendo() {
 	global $useragent;
-	return(preg_match('/Nintendo DSi/i', $useragent) || preg_match('/Nintendo DS/i', $useragent));
+	return preg_match( '/Nintendo DSi/i', $useragent ) || preg_match( '/Nintendo DS/i', $useragent );
 }
 
 
@@ -247,7 +246,7 @@ function is_nintendo() {
 function is_smartphone() {
 	global $mobble_detect;
 	$grade = $mobble_detect->mobileGrade();
-	if ($grade == 'A' || $grade == 'B') {
+	if ( $grade == 'A' || $grade == 'B' ) {
 		return true;
 	} else {
 		return false;
@@ -260,7 +259,7 @@ function is_smartphone() {
 ***************************************************************/
 
 function is_handheld() {
-	return(is_mobile() || is_iphone() || is_ipad() || is_ipod() || is_android() || is_blackberry() || is_opera_mobile() || is_webos() || is_symbian() || is_windows_mobile() || is_motorola() || is_samsung() || is_samsung_tablet() || is_sony_ericsson() || is_nintendo());
+	return is_mobile() || is_iphone() || is_ipad() || is_ipod() || is_android() || is_blackberry() || is_opera_mobile() || is_webos() || is_symbian() || is_windows_mobile() || is_motorola() || is_samsung() || is_samsung_tablet() || is_sony_ericsson() || is_nintendo();
 }
 
 /***************************************************************
@@ -270,8 +269,8 @@ function is_handheld() {
 
 function is_mobile() {
 	global $mobble_detect;
-	if (is_tablet()) return false;
-	return ($mobble_detect->isMobile());
+	if ( is_tablet() ) return false;
+	return $mobble_detect->isMobile();
 }
 
 /***************************************************************
@@ -281,7 +280,7 @@ function is_mobile() {
 
 function is_ios() {
 	global $mobble_detect;
-	return($mobble_detect->isiOS());
+	return $mobble_detect->isiOS();
 }
 
 /***************************************************************
@@ -291,7 +290,7 @@ function is_ios() {
 
 function is_tablet() {
 	global $mobble_detect;
-	return($mobble_detect->isTablet());
+	return $mobble_detect->isTablet();
 }
 
 /***************************************************************
@@ -299,12 +298,12 @@ function is_tablet() {
 * Setup default settings on theme activation
 ***************************************************************/
 
-register_activation_hook(__FILE__, 'mobble_defaults');
+register_activation_hook( __FILE__, 'mobble_defaults' );
 
 function mobble_defaults() {
-	
-	$tmp = get_option('mobble_body_class');
-	if(!$tmp) { update_option('mobble_body_class', 1); }
+
+	$tmp = get_option( 'mobble_body_class' );
+	if ( !$tmp ) { update_option( 'mobble_body_class', 1 ); }
 }
 
 /***************************************************************
@@ -312,10 +311,10 @@ function mobble_defaults() {
 * Remove options from WordPress table on deactivation
 ***************************************************************/
 
-register_deactivation_hook(__FILE__, 'mobble_clean');
+register_deactivation_hook( __FILE__, 'mobble_clean' );
 
 function mobble_clean() {
-	delete_option('mobble_body_class');
+	delete_option( 'mobble_body_class' );
 }
 
 /***************************************************************
@@ -323,18 +322,18 @@ function mobble_clean() {
 * Create an administration settings page within WordPress
 ***************************************************************/
 
-if (is_admin()) { 
-	add_action('admin_menu', 'mobble_menu');
-	add_action('admin_init', 'mobble_register_settings');
+if ( is_admin() ) {
+	add_action( 'admin_menu', 'mobble_menu' );
+	add_action( 'admin_init', 'mobble_register_settings' );
 }
 
 function mobble_menu() {
- 	add_options_page('mobble', 'mobble', 'administrator', __FILE__, 'mobble_settings');
+ 	add_options_page( 'mobble', 'mobble', 'administrator', __FILE__, 'mobble_settings' );
 }
 
-function mobble_settings() { 
-	
-	define('MOBBLE_IMAGES_URL',plugins_url('/',__FILE__));
+function mobble_settings() {
+
+	define( 'MOBBLE_IMAGES_URL', plugins_url( '/', __FILE__ ) );
 ?>
 
 <!-- flattr js -->
@@ -358,27 +357,27 @@ function mobble_settings() {
 </style>
 
 <div class="wrap">
-	
+
 	<div class="icon32" id="icon-options-general"></div>
-	
+
 	<h2>mobble</h2>
-	<ul class="subsubsub"> 
-		<li><a href="?page=mobble/mobble.php" <?php if (!isset($_GET['action'])) { echo 'class="current"'; } ?>>Options</a> </li> 
-		<!--<li><a href="?page=mobble/mobble.php&amp;action=help" <?php if ($_GET['action'] == "help") { echo 'class="current"'; } ?>>Help</a></li>--> 
-	</ul> 
-		
+	<ul class="subsubsub">
+		<li><a href="?page=mobble/mobble.php" <?php if ( !isset( $_GET['action'] ) ) { echo 'class="current"'; } ?>>Options</a> </li>
+		<!--<li><a href="?page=mobble/mobble.php&amp;action=help" <?php if ( $_GET['action'] == "help" ) { echo 'class="current"'; } ?>>Help</a></li>-->
+	</ul>
+
 	<form method="post" action="options.php">
 	    <?php settings_fields( 'mobble-settings-group' ); ?>
-	    
+
 	    <table class="form-table">
 	        <tr valign="top">
 	        <th scope="row">Mobify body class?</th>
-	        <td><label for="users_can_register"><input name="mobble_body_class" type="checkbox" id="mobble_body_class" value="1" <?php echo checked( 1, get_option('mobble_body_class'), false ); ?> /> &nbsp;Add mobile information to your theme body class? e.g. &lt;body class="handheld android tablet"&gt;</label> </td>
+	        <td><label for="users_can_register"><input name="mobble_body_class" type="checkbox" id="mobble_body_class" value="1" <?php echo checked( 1, get_option( 'mobble_body_class' ), false ); ?> /> &nbsp;Add mobile information to your theme body class? e.g. &lt;body class="handheld android tablet"&gt;</label> </td>
 	        </tr>
 	    </table>
-	    
+
 		<p class="submit">
-			<input type="submit" class="button-primary" value="<?php _e('Save Changes') ?>" />
+			<input type="submit" class="button-primary" value="<?php _e( 'Save Changes' ) ?>" />
 		</p>
 	</form>
 
@@ -386,9 +385,9 @@ function mobble_settings() {
 		<a href="http://scott.ee" title="Scott Evans - Web Designer &amp; WordPress developer"><img src="<?php echo MOBBLE_URL; ?>/scott.ee.png" alt="scott logo"/></a>
 		<p>Developed by <a href="http://scott.ee" title="Scott Evans - Web Designer and WordPress developer">Scott Evans</a>. If you find this plugin useful I'd be flattered to be Flattr'd:<br/><a class="FlattrButton" style="display:none; " rev="flattr;button:compact;" href="http://scott.ee/journal/mobble/"></a></p>
 	</div>
-	
+
 </div>
-<?php 
+<?php
 }
 
 function mobble_register_settings() {
@@ -400,52 +399,56 @@ function mobble_register_settings() {
 * Add mobble info to the body class if activated in settings
 ***************************************************************/
 
-if (!is_admin() && get_option('mobble_body_class')) {	
-	add_filter('body_class','mobble_body_class');
+if ( !is_admin() && get_option( 'mobble_body_class' ) ) {
+	add_filter( 'body_class', 'mobble_body_class' );
 }
 
-function mobble_body_class($classes) {
+function mobble_body_class( $classes ) {
 
 	global $is_lynx, $is_gecko, $is_IE, $is_opera, $is_NS4, $is_safari, $is_chrome, $mobble_detect;
 
 	// top level
-	if (is_handheld()) { $classes[] = "handheld"; };
-	if (is_mobile()) { $classes[] = "mobile"; };
-	if (is_ios()) { $classes[] = "ios"; };
-	if (is_tablet()) { $classes[] = "tablet"; };
+	if ( is_handheld() ) { $classes[] = "handheld"; };
+	if ( is_mobile() ) { $classes[] = "mobile"; };
+	if ( is_ios() ) { $classes[] = "ios"; };
+	if ( is_tablet() ) { $classes[] = "tablet"; };
 
-	// specific 
-	if (is_iphone()) { $classes[] = "iphone"; };
-	if (is_ipad()) { $classes[] = "ipad"; };
-	if (is_ipod()) { $classes[] = "ipod"; };
-	if (is_android()) { $classes[] = "android"; };
-	if (is_blackberry()) { $classes[] = "blackberry"; };
-	if (is_opera_mobile()) { $classes[] = "opera-mobile";}
-	if (is_webos()) { $classes[] = "webos";}
-	if (is_symbian()) { $classes[] = "symbian";}
-	if (is_windows_mobile()) { $classes[] = "windows-mobile"; }
+	// specific
+	if ( is_iphone() ) { $classes[] = "iphone"; };
+	if ( is_ipad() ) { $classes[] = "ipad"; };
+	if ( is_ipod() ) { $classes[] = "ipod"; };
+	if ( is_android() ) { $classes[] = "android"; };
+	if ( is_blackberry() ) { $classes[] = "blackberry"; };
+	if ( is_opera_mobile() ) { $classes[] = "opera-mobile";}
+	if ( is_webos() ) { $classes[] = "webos";}
+	if ( is_symbian() ) { $classes[] = "symbian";}
+	if ( is_windows_mobile() ) { $classes[] = "windows-mobile"; }
 	//if (is_lg()) { $classes[] = "lg"; }
-	if (is_motorola()) { $classes[] = "motorola"; }
+	if ( is_motorola() ) { $classes[] = "motorola"; }
 	//if (is_smartphone()) { $classes[] = "smartphone"; }
 	//if (is_nokia()) { $classes[] = "nokia"; }
-	if (is_samsung()) { $classes[] = "samsung"; }
-	if (is_samsung_tablet()) { $classes[] = "samsung-tablet"; }
-	if (is_sony_ericsson()) { $classes[] = "sony-ericsson"; }
-	if (is_nintendo()) { $classes[] = "nintendo"; }
-	
+	if ( is_samsung() ) { $classes[] = "samsung"; }
+	if ( is_samsung_tablet() ) { $classes[] = "samsung-tablet"; }
+	if ( is_sony_ericsson() ) { $classes[] = "sony-ericsson"; }
+	if ( is_nintendo() ) { $classes[] = "nintendo"; }
+
 	// bonus
-	if (!is_handheld()) { $classes[] = "desktop"; }
-	
-	if ($is_lynx) { $classes[] = "lynx"; }
-	if ($is_gecko) { $classes[] = "gecko"; }
-	if ($is_opera) { $classes[] = "opera"; }
-	if ($is_NS4) { $classes[] = "ns4"; }
-	if ($is_safari) { $classes[] = "safari"; }
-	if ($is_chrome) { $classes[] = "chrome"; }
-	if ($is_IE) { $classes[] = "ie"; }
-	
+	if ( !is_handheld() ) { $classes[] = "desktop"; }
+
+	if ( $is_lynx ) { $classes[] = "lynx"; }
+	if ( $is_gecko ) { $classes[] = "gecko"; }
+	// if ( $mobble_detect->is( 'Gecko' ) ) { $classes[] = "gecko"; }
+	if ( $is_opera ) { $classes[] = "opera"; }
+	// if ( $mobble_detect->is( 'Opera' ) ) { $classes[] = "opera"; }
+	if ( $is_NS4 ) { $classes[] = "ns4"; }
+	if ( $is_safari ) { $classes[] = "safari"; }
+	// if ( $mobble_detect->is( 'Safari' ) ) { $classes[] = "safari"; }
+	if ( $is_chrome ) { $classes[] = "chrome"; }
+	// if ( $mobble_detect->is( 'Chrome' ) ) { $classes[] = "chrome"; }
+	if ( $is_IE ) { $classes[] = "ie"; }
+	// if ( $mobble_detect->is( 'IE' ) ) { $classes[] = "ie"; }
+
 	return $classes;
 }
 
 /* fin */
-?>

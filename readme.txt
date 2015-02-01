@@ -3,7 +3,7 @@ Contributors: scottsweb
 Donate link: https://flattr.com/profile/scottsweb/things
 Tags: mobile, conditional, css, media, queries, functions
 Requires at least: 3.0
-Tested up to: 3.8
+Tested up to: 4.1
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -14,7 +14,7 @@ Helper plugin that provides conditional functions for detecting a variety of mob
 
 mobble provides mobile related conditional functions for your site. e.g. [is_iphone(), is_mobile() and is_tablet()](http://wordpress.org/extend/plugins/mobble/faq/ "More examples").
 
-CSS media queries are great for creating responsive web designs but they do not always provide enough control. There are times when not all of the content, JavaScript or CSS on a page is relevant for a particular device. With the mobble functions you can make these kind of tweaks to your theme. 
+CSS media queries are great for creating responsive web designs but they do not always provide enough control. There are times when not all of the content, JavaScript or CSS on a page is relevant for a particular device. With the mobble functions you can make these kind of tweaks to your theme.
 
 mobble can also add device information to the body class of your theme allowing you to easily target your CSS for different gadgets.
 
@@ -35,7 +35,7 @@ To install this plugin:
 
 The most useful ones are:
 
-`<?php 
+`<?php
 is_handheld(); // any handheld device (phone, tablet, Nintendo)
 is_mobile(); // any type of mobile phone (iPhone, Android, etc)
 is_tablet(); // any tablet device
@@ -44,7 +44,7 @@ is_ios(); // any Apple device (iPhone, iPad, iPod)
 
 You can also use:
 
-`<?php 
+`<?php
 is_iphone();
 is_ipad();
 is_ipod();
@@ -67,7 +67,7 @@ Inspecting mobile-detect.php will also reveal some other useful tools.
 
 Yup. This first example disables the sidebar for mobile/phone devices:
 
-`<?php 
+`<?php
 if (!is_mobile()) {
 	get_sidebar();
 }
@@ -75,14 +75,14 @@ if (!is_mobile()) {
 
 This second example loads a specific stylesheet for Apple devices (iPhone, iPod and iPad):
 
-`<?php 
+`<?php
 if (is_ios()) {
 	wp_enqueue_style('ios', get_template_directory_uri() . '/ios.css');
 }
 ?>`
 
 = Caching =
-Please note that in certain setups caching will cause undesired behaviour. If your cache is set too aggressively PHP will be skipped and the device detection will not work. 
+Please note that in certain setups caching will cause undesired behaviour. If your cache is set too aggressively PHP will be skipped and the device detection will not work.
 
 == Screenshots ==
 
@@ -91,17 +91,21 @@ Please note that in certain setups caching will cause undesired behaviour. If yo
 
 == Changelog ==
 
-= 1.3 = 
+= 1.4a =
+* Run through PHP tidy
+* Mobile detect update to 2.8.11
+
+= 1.3 =
 * Update mobile detect library to 2.7.6
 * Small CSS change for 3.8
 
-= 1.2.1 = 
-* Small bug fix on is_mobile() 
+= 1.2.1 =
+* Small bug fix on is_mobile()
 * Moved screenshots out of trunk
 
-= 1.2 = 
+= 1.2 =
 * Now uses mobile-detect (http://mobiledetect.net/) which provides more accurate and varied detection
-* Mobiles can now be graded (A,B,C) using the mobile-detect API (see mobile-detect.php) or mobiledetect.net 
+* Mobiles can now be graded (A,B,C) using the mobile-detect API (see mobile-detect.php) or mobiledetect.net
 * is_palm, is_lg, is_nokia will be removed soon - check depricated notices
 * New check for is_kindle - feedback on this one appreciated as I cannot test it
 
