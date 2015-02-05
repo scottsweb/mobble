@@ -437,16 +437,16 @@ function mobble_body_class( $classes ) {
 
 	if ( $is_lynx ) { $classes[] = "lynx"; }
 	if ( $is_gecko ) { $classes[] = "gecko"; }
-	// if ( $mobble_detect->is( 'Gecko' ) ) { $classes[] = "gecko"; }
+	if ( $mobble_detect->is( 'Gecko' ) ) { $classes[] = "gecko"; }
 	if ( $is_opera ) { $classes[] = "opera"; }
-	// if ( $mobble_detect->is( 'Opera' ) ) { $classes[] = "opera"; }
+	if ( $mobble_detect->is( 'Opera' ) ) { $classes[] = "opera"; }
 	if ( $is_NS4 ) { $classes[] = "ns4"; }
 	if ( $is_safari ) { $classes[] = "safari"; }
-	// if ( $mobble_detect->is( 'Safari' ) ) { $classes[] = "safari"; }
+	if ( $mobble_detect->is( 'Safari' ) ) { $classes[] = "safari"; }
 	if ( $is_chrome ) { $classes[] = "chrome"; }
-	// if ( $mobble_detect->is( 'Chrome' ) ) { $classes[] = "chrome"; }
+	if ( $mobble_detect->is( 'Chrome' ) ) { $classes[] = "chrome"; }
 	if ( $is_IE ) { $classes[] = "ie"; }
-	// if ( $mobble_detect->is( 'IE' ) ) { $classes[] = "ie"; }
+	if ( $mobble_detect->is( 'IE' ) ) { $classes[] = "ie"; }
 
 	return $classes;
 }
