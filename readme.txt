@@ -93,7 +93,7 @@ Please note that in certain setups caching will cause undesired behaviour. If yo
 
 = 1.4 =
 * Run through PHP tidy
-* Mobile detect update to 2.8.11
+* Mobile detect update to 2.8.13
 
 = 1.3 =
 * Update mobile detect library to 2.7.6
