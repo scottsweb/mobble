@@ -3,7 +3,7 @@ Contributors: scottsweb
 Donate link: https://flattr.com/profile/scottsweb/things
 Tags: mobile, conditional, css, media, queries, functions
 Requires at least: 3.0
-Tested up to: 4.1
+Tested up to: 4.2.2
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -61,7 +61,7 @@ is_sony_ericsson();
 is_nintendo();
 ?>`
 
-Inspecting mobile-detect.php will also reveal some other useful tools.
+Inspecting `Mobile_Detect.php` will also reveal some other useful tools.
 
 = Do you have any examples? =
 
@@ -91,7 +91,7 @@ Please note that in certain setups caching will cause undesired behaviour. If yo
 
 == Changelog ==
 
-= 1.4a =
+= 1.4 =
 * Run through PHP tidy
 * Mobile detect update to 2.8.11
 
