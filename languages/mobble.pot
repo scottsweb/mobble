@@ -1,0 +1,67 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mobble 1.4 Pot file\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/mobble\n"
+"POT-Creation-Date: 2015-09-09 13:15+0200\n"
+"PO-Revision-Date: 2015-09-07 19:40+0200\n"
+"Last-Translator: Ralf Koller <r.koller@gmail.com>\n"
+"Language-Team: Ralf Koller <r.koller@gmail.com>\n"
+"Language: en_EN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.4\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: mobble.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SearchPathExcluded-1: *.png\n"
+
+#: mobble.php:372
+msgid "Options"
+msgstr ""
+
+#: mobble.php:381
+msgid "Mobify body class?"
+msgstr ""
+
+#: mobble.php:382
+msgid ""
+"&nbsp;Add mobile information to your theme body class? e.g. &lt;body class="
+"\"handheld android tablet\"&gt;"
+msgstr ""
+
+#: mobble.php:387
+msgid "Save Changes"
+msgstr ""
+
+#: mobble.php:393
+msgid "If you find this plugin useful I'd be flattered to be Flattr'd:"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "mobble"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://scott.ee/journal/mobble/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Conditional functions for detecting a variety of mobile devices and tablets. "
+"For example is_android(), is_ios(), is_iphone()."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Scott Evans"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://scott.ee"
+msgstr ""
