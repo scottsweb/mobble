@@ -38,7 +38,7 @@
 define( 'MOBBLE_PATH', dirname( __FILE__ ) );
 define( 'MOBBLE_URL', untrailingslashit( plugins_url( '/', __FILE__ ) ) );
 
-if ( !class_exists( 'Mobile_Detect' ) ) {
+if ( ! class_exists( 'Mobile_Detect' ) ) {
 	include MOBBLE_PATH . '/Mobile_Detect.php';
 }
 
@@ -310,7 +310,7 @@ register_activation_hook( __FILE__, 'mobble_defaults' );
 function mobble_defaults() {
 
 	$tmp = get_option( 'mobble_body_class' );
-	if ( !$tmp ) { update_option( 'mobble_body_class', 1 ); }
+	if ( ! $tmp ) { update_option( 'mobble_body_class', 1 ); }
 }
 
 /***************************************************************
@@ -346,13 +346,13 @@ function mobble_settings() {
 <!-- flattr js -->
 <script type="text/javascript">
 /* <![CDATA[ */
-    (function() {
-        var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
-        s.type = 'text/javascript';
-        s.async = true;
-        s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto';
-        t.parentNode.insertBefore(s, t);
-    })();
+	(function() {
+		var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+		s.type = 'text/javascript';
+		s.async = true;
+		s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto';
+		t.parentNode.insertBefore(s, t);
+	})();
 /* ]]> */
 </script>
 
@@ -369,19 +369,19 @@ function mobble_settings() {
 
 	<h2>mobble</h2>
 	<ul class="subsubsub">
-		<li><a href="?page=mobble/mobble.php" <?php if ( !isset( $_GET['action'] ) ) { echo 'class="current"'; } ?>><?php _e( 'Options', 'mobble' ); ?></a> </li>
+		<li><a href="?page=mobble/mobble.php" <?php if ( ! isset( $_GET['action'] ) ) { echo 'class="current"'; } ?>><?php _e( 'Options', 'mobble' ); ?></a> </li>
 		<!--<li><a href="?page=mobble/mobble.php&amp;action=help" <?php if ( $_GET['action'] == "help" ) { echo 'class="current"'; } ?>>Help</a></li>-->
 	</ul>
 
 	<form method="post" action="options.php">
-	    <?php settings_fields( 'mobble-settings-group' ); ?>
+		<?php settings_fields( 'mobble-settings-group' ); ?>
 
-	    <table class="form-table">
-	        <tr valign="top">
-	        <th scope="row"><?php _e( 'Mobify body class?', 'mobble' ); ?></th>
-	        <td><label for="users_can_register"><input name="mobble_body_class" type="checkbox" id="mobble_body_class" value="1" <?php echo checked( 1, get_option( 'mobble_body_class' ), false ); ?> /><?php _e( '&nbsp;Add mobile information to your theme body class? e.g. &lt;body class="handheld android tablet"&gt;', 'mobble' ); ?></label> </td>
-	        </tr>
-	    </table>
+		<table class="form-table">
+			<tr valign="top">
+			<th scope="row"><?php _e( 'Mobify body class?', 'mobble' ); ?></th>
+			<td><label for="users_can_register"><input name="mobble_body_class" type="checkbox" id="mobble_body_class" value="1" <?php echo checked( 1, get_option( 'mobble_body_class' ), false ); ?> /><?php _e( '&nbsp;Add mobile information to your theme body class? e.g. &lt;body class="handheld android tablet"&gt;', 'mobble' ); ?></label> </td>
+			</tr>
+		</table>
 
 		<p class="submit">
 			<input type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'mobble' ) ?>" />
@@ -406,7 +406,7 @@ function mobble_register_settings() {
 * Add mobble info to the body class if activated in settings
 ***************************************************************/
 
-if ( !is_admin() && get_option( 'mobble_body_class' ) ) {
+if ( ! is_admin() && get_option( 'mobble_body_class' ) ) {
 	add_filter( 'body_class', 'mobble_body_class' );
 }
 
@@ -440,7 +440,7 @@ function mobble_body_class( $classes ) {
 	if ( is_nintendo() ) { $classes[] = "nintendo"; }
 
 	// bonus
-	if ( !is_handheld() ) { $classes[] = "desktop"; }
+	if ( ! is_handheld() ) { $classes[] = "desktop"; }
 
 	if ( $is_lynx ) { $classes[] = "lynx"; }
 	if ( $is_gecko ) { $classes[] = "gecko"; }
