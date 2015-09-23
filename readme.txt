@@ -3,7 +3,7 @@ Contributors: scottsweb
 Donate link: https://flattr.com/profile/scottsweb/things
 Tags: mobile, conditional, css, media, queries, functions
 Requires at least: 3.0
-Tested up to: 4.2.2
+Tested up to: 4.4
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -90,6 +90,10 @@ Please note that in certain setups caching will cause undesired behaviour. If yo
 2. mobble settings screen for enabling/disabling the body class.
 
 == Changelog ==
+
+== 1.5 ==
+* Add German translation (props @rpkoller)
+* Minor PHP improvements
 
 = 1.4 =
 * Run through PHP tidy

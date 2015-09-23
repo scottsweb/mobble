@@ -98,6 +98,10 @@ Please note that in certain setups caching will cause undesired behaviour. If yo
 
 ## Changelog
 
+####1.5
+* Add German translation (props @rpkoller)
+* Minor PHP improvements
+
 ####1.4
 * Run through PHP tidy
 * Mobile detect update to 2.8.13
