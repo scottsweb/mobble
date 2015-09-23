@@ -368,10 +368,6 @@ function mobble_settings() {
 	<div class="icon32" id="icon-options-general"></div>
 
 	<h2>mobble</h2>
-	<ul class="subsubsub">
-		<li><a href="?page=mobble/mobble.php" <?php if ( ! isset( $_GET['action'] ) ) { echo 'class="current"'; } ?>><?php _e( 'Options', 'mobble' ); ?></a> </li>
-		<!--<li><a href="?page=mobble/mobble.php&amp;action=help" <?php if ( $_GET['action'] == "help" ) { echo 'class="current"'; } ?>>Help</a></li>-->
-	</ul>
 
 	<form method="post" action="options.php">
 		<?php settings_fields( 'mobble-settings-group' ); ?>
