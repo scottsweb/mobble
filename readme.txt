@@ -94,6 +94,7 @@ Please note that in certain setups caching will cause undesired behaviour. If yo
 == 1.5 ==
 * Add German translation (props @rpkoller)
 * Minor PHP improvements
+* Mobile Detect 2.8.17
 
 = 1.4 =
 * Run through PHP tidy
