@@ -1,0 +1,24 @@
+{
+  "name": "mkeasling/mobble",
+  "description": "Fork of scottsweb/mobile, to detect mobile browsers in Wordpress",
+  "homepage": "http://scott.ee/journal/mobble/",
+  "keywords": [
+    "wordpress"
+  ],
+  "license": "GPL-2.0+",
+  "authors": [
+    {
+      "name":"Scott Evans",
+      "email":"hi@scott.ee",
+      "homepage":"http://scott.ee/"
+    }
+  ],
+  "support"    : {
+    "issues": "https://github.com/scottsweb/mobble/issues",
+    "source": "https://github.com/mkeasling/mobble"
+  },
+  "type": "wordpress-plugin",
+  "require": {
+    "composer/installers": "~1.0"
+  }
+}
