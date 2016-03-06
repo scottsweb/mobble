@@ -51,6 +51,8 @@ $useragent = isset( $_SERVER['HTTP_USER_AGENT'] ) ? $_SERVER['HTTP_USER_AGENT'] 
 $mobble_detect = new Mobile_Detect();
 $mobble_detect->setDetectionType( 'extended' );
 
+$GLOBALS['mobble_detect'] = $mobble_detect;
+
 /***************************************************************
 * Function is_iphone
 * Detect the iPhone
@@ -58,7 +60,7 @@ $mobble_detect->setDetectionType( 'extended' );
 
 function is_iphone() {
 	global $mobble_detect;
-	return $mobble_detect->isIphone();
+	return apply_filters( 'is_iphone', $mobble_detect->isIphone(), $mobble_detect );
 }
 
 /***************************************************************
@@ -68,7 +70,7 @@ function is_iphone() {
 
 function is_ipad() {
 	global $mobble_detect;
-	return $mobble_detect->isIpad();
+	return apply_filters( 'is_ipad', $mobble_detect->isIpad(), $mobble_detect );
 }
 
 /***************************************************************
@@ -78,7 +80,7 @@ function is_ipad() {
 
 function is_ipod() {
 	global $mobble_detect;
-	return $mobble_detect->is( 'iPod' );
+	return apply_filters( 'is_ipod', $mobble_detect->is( 'iPod' ), $mobble_detect );
 }
 
 /***************************************************************
@@ -88,7 +90,7 @@ function is_ipod() {
 
 function is_android() {
 	global $mobble_detect;
-	return $mobble_detect->isAndroidOS();
+	return apply_filters( 'is_android', $mobble_detect->isAndroidOS(), $mobble_detect );
 }
 
 /***************************************************************
@@ -98,7 +100,7 @@ function is_android() {
 
 function is_blackberry() {
 	global $mobble_detect;
-	return $mobble_detect->isBlackBerry();
+	return apply_filters( 'is_blackberry', $mobble_detect->isBlackBerry(), $mobble_detect );
 }
 
 /***************************************************************
@@ -108,7 +110,7 @@ function is_blackberry() {
 
 function is_opera_mobile() {
 	global $mobble_detect;
-	return $mobble_detect->isOpera();
+	return apply_filters( 'is_opera', $mobble_detect->isOpera(), $mobble_detect );
 }
 
 /***************************************************************
@@ -119,7 +121,7 @@ function is_opera_mobile() {
 function is_palm() {
 	_deprecated_function( 'is_palm', '1.2', 'is_webos' );
 	global $mobble_detect;
-	return $mobble_detect->is( 'webOS' );
+	return apply_filters( 'is_palm', $mobble_detect->is( 'webOS' ), $mobble_detect );
 }
 
 /***************************************************************
@@ -129,7 +131,7 @@ function is_palm() {
 
 function is_webos() {
 	global $mobble_detect;
-	return $mobble_detect->is( 'webOS' );
+	return apply_filters( 'is_webos', $mobble_detect->is( 'webOS' ), $mobble_detect );
 }
 
 /***************************************************************
@@ -139,7 +141,7 @@ function is_webos() {
 
 function is_symbian() {
 	global $mobble_detect;
-	return $mobble_detect->is( 'Symbian' );
+	return apply_filters( 'is_symbian', $mobble_detect->is( 'Symbian' ), $mobble_detect );
 }
 
 /***************************************************************
@@ -149,7 +151,11 @@ function is_symbian() {
 
 function is_windows_mobile() {
 	global $mobble_detect;
-	return $mobble_detect->is( 'WindowsMobileOS' ) || $mobble_detect->is( 'WindowsPhoneOS' );
+	return apply_filters(
+		'is_windows_mobile',
+		( $mobble_detect->is( 'WindowsMobileOS' ) || $mobble_detect->is( 'WindowsPhoneOS' ) ),
+		$mobble_detect
+	);
 }
 
 /***************************************************************
@@ -159,8 +165,8 @@ function is_windows_mobile() {
 
 function is_lg() {
 	_deprecated_function( 'is_lg', '1.2' );
-	global $useragent;
-	return preg_match( '/LG/i', $useragent );
+	global $useragent, $mobble_detect;
+	return apply_filters( 'is_lg', preg_match( '/LG/i', $useragent ), $mobble_detect );
 }
 
 /***************************************************************
@@ -170,7 +176,7 @@ function is_lg() {
 
 function is_motorola() {
 	global $mobble_detect;
-	return $mobble_detect->is( 'Motorola' );
+	return apply_filters( 'is_motorola', $mobble_detect->is( 'Motorola' ), $mobble_detect );
 }
 
 /***************************************************************
@@ -180,8 +186,13 @@ function is_motorola() {
 
 function is_nokia() {
 	_deprecated_function( 'is_nokia', '1.2' );
-	global $useragent;
-	return preg_match( '/Series60/i', $useragent ) || preg_match( '/Symbian/i', $useragent ) || preg_match( '/Nokia/i', $useragent );
+	global $useragent, $mobble_detect;
+	return apply_filters(
+		'is_nokia',
+		( preg_match( '/Series60/i', $useragent ) || preg_match( '/Symbian/i', $useragent ) || preg_match( '/Nokia/i',
+				$useragent ) ),
+		$mobble_detect
+	);
 }
 
 /***************************************************************
@@ -191,7 +202,7 @@ function is_nokia() {
 
 function is_samsung() {
 	global $mobble_detect;
-	return $mobble_detect->is( 'Samsung' );
+	return apply_filters( 'is_samsung', $mobble_detect->is( 'Samsung' ), $mobble_detect );
 }
 
 /***************************************************************
@@ -201,7 +212,8 @@ function is_samsung() {
 
 function is_samsung_galaxy_tab() {
 	_deprecated_function( 'is_samsung_galaxy_tab', '1.2', 'is_samsung_tablet' );
-	return is_samsung_tablet();
+	global $mobble_detect;
+	return apply_filters( 'is_samsung_galaxy_tab', is_samsung_tablet(), $mobble_detect );
 }
 
 /***************************************************************
@@ -211,7 +223,7 @@ function is_samsung_galaxy_tab() {
 
 function is_samsung_tablet() {
 	global $mobble_detect;
-	return $mobble_detect->is( 'SamsungTablet' );
+	return apply_filters( 'is_samsung_tablet', $mobble_detect->is( 'SamsungTablet' ), $mobble_detect );
 }
 
 /***************************************************************
@@ -221,7 +233,7 @@ function is_samsung_tablet() {
 
 function is_kindle() {
 	global $mobble_detect;
-	return $mobble_detect->is( 'Kindle' );
+	return apply_filters( 'is_kindle', $mobble_detect->is( 'Kindle' ), $mobble_detect );
 }
 
 /***************************************************************
@@ -231,7 +243,7 @@ function is_kindle() {
 
 function is_sony_ericsson() {
 	global $mobble_detect;
-	return $mobble_detect->is( 'Sony' );
+	return apply_filters( 'is_sony_ericsson', $mobble_detect->is( 'Sony' ), $mobble_detect );
 }
 
 /***************************************************************
@@ -240,8 +252,12 @@ function is_sony_ericsson() {
 ***************************************************************/
 
 function is_nintendo() {
-	global $useragent;
-	return preg_match( '/Nintendo DSi/i', $useragent ) || preg_match( '/Nintendo DS/i', $useragent );
+	global $useragent, $mobble_detect;
+	return apply_filters(
+		'is_nintendo',
+		( preg_match( '/Nintendo DSi/i', $useragent ) || preg_match( '/Nintendo DS/i', $useragent ) ),
+		$mobble_detect
+	);
 }
 
 
@@ -252,12 +268,14 @@ function is_nintendo() {
 
 function is_smartphone() {
 	global $mobble_detect;
-	$grade = $mobble_detect->mobileGrade();
+	$grade  = $mobble_detect->mobileGrade();
+	$result = null;
 	if ( $grade == 'A' || $grade == 'B' ) {
-		return true;
+		$result = true;
 	} else {
-		return false;
+		$result = false;
 	}
+	return apply_filters( 'is_smartphone', $result, $mobble_detect );
 }
 
 /***************************************************************
@@ -266,7 +284,12 @@ function is_smartphone() {
 ***************************************************************/
 
 function is_handheld() {
-	return is_mobile() || is_iphone() || is_ipad() || is_ipod() || is_android() || is_blackberry() || is_opera_mobile() || is_webos() || is_symbian() || is_windows_mobile() || is_motorola() || is_samsung() || is_samsung_tablet() || is_sony_ericsson() || is_nintendo();
+	global $mobble_detect;
+	return apply_filters(
+		'is_handheld',
+		( is_mobile() || is_iphone() || is_ipad() || is_ipod() || is_android() || is_blackberry() || is_opera_mobile() || is_webos() || is_symbian() || is_windows_mobile() || is_motorola() || is_samsung() || is_samsung_tablet() || is_sony_ericsson() || is_nintendo() ),
+		$mobble_detect
+	);
 }
 
 /***************************************************************
@@ -276,8 +299,13 @@ function is_handheld() {
 
 function is_mobile() {
 	global $mobble_detect;
-	if ( is_tablet() ) return false;
-	return $mobble_detect->isMobile();
+	$result = null;
+	if ( is_tablet() ) {
+		$result = false;
+	} else {
+		$result = $mobble_detect->isMobile();
+	}
+	return apply_filters( 'is_mobile', $result, $mobble_detect );
 }
 
 /***************************************************************
@@ -287,7 +315,7 @@ function is_mobile() {
 
 function is_ios() {
 	global $mobble_detect;
-	return $mobble_detect->isiOS();
+	return apply_filters( 'is_ios', $mobble_detect->isiOS(), $mobble_detect );
 }
 
 /***************************************************************
@@ -297,7 +325,7 @@ function is_ios() {
 
 function is_tablet() {
 	global $mobble_detect;
-	return $mobble_detect->isTablet();
+	return apply_filters( 'is_tablet', $mobble_detect->isTablet(), $mobble_detect );
 }
 
 /***************************************************************

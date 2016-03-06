@@ -1,0 +1,24 @@
+{
+  "name": "scottsweb/mobble",
+  "description": "Detect mobile browsers in WordPress",
+  "homepage": "http://scott.ee/journal/mobble/",
+  "keywords": [
+    "wordpress", "mobile"
+  ],
+  "license": "GPL-2.0+",
+  "authors": [
+    {
+      "name":"Scott Evans",
+      "email":"hi@scott.ee",
+      "homepage":"http://scott.ee/"
+    }
+  ],
+  "support"    : {
+    "issues": "https://github.com/scottsweb/mobble/issues",
+    "source": "https://github.com/scottsweb/mobble"
+  },
+  "type": "wordpress-plugin",
+  "require": {
+    "composer/installers": "~1.0"
+  }
+}
