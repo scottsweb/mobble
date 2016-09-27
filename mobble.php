@@ -436,7 +436,7 @@ if ( ! is_admin() && get_option( 'mobble_body_class' ) ) {
 
 function mobble_body_class( $classes ) {
 
-	global $is_lynx, $is_gecko, $is_IE, $is_opera, $is_NS4, $is_safari, $is_chrome, $mobble_detect;
+	global $is_lynx, $is_gecko, $is_IE, $is_opera, $is_NS4, $is_safari, $is_chrome, $is_edge, $mobble_detect;
 
 	// top level
 	if ( is_handheld() ) { $classes[] = "handheld"; };
@@ -478,6 +478,9 @@ function mobble_body_class( $classes ) {
 	if ( $mobble_detect->is( 'Chrome' ) ) { $classes[] = "chrome"; }
 	if ( $is_IE ) { $classes[] = "ie"; }
 	if ( $mobble_detect->is( 'IE' ) ) { $classes[] = "ie"; }
+	if ( $is_edge ) { $classes[] = "edge"; }
+	if ( $mobble_detect->is( 'Edge' ) ) { $classes[] = "edge"; }
+	
 
 	return $classes;
 }
