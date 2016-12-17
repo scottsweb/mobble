@@ -100,6 +100,8 @@ Please note that in certain setups caching will cause undesired behaviour. If yo
 
 ####1.6
 * Mobile Detect 2.8.24
+* Add edge body class (props Luca Speranza)
+* Add filters to functions (props Matthew Keasling)
 
 ####1.5
 * Add German translation (props @rpkoller)
